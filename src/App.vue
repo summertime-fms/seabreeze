@@ -1,0 +1,56 @@
+<template>
+     <router-view />
+</template>
+
+<style lang="scss">
+@import "~materialize-css/dist/css/materialize.min.css";
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Inter"),
+  url('../public/fonts/Inter-Regular.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 500;
+  font-display: swap;
+  src: local("Inter"),
+  url('../public/fonts/Inter-Medium.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 600;
+  font-display: swap;
+  src: local("Inter"),
+  url('../public/fonts/Inter-SemiBold.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 700;
+  font-display: swap;
+  src: local("Inter"),
+  url('../public/fonts/Inter-Bold.woff2') format("woff2");
+}
+
+
+</style>
+
+<script>
+import BaseLayout from "@/layouts/BaseLayout.vue";
+export default {
+  computed: {
+    layout() {
+      return this.$route.meta.layout;
+    }
+  },
+  components: {
+    BaseLayout
+  }
+}
+</script>
+
+
