@@ -31,30 +31,7 @@ export default {
     Bar,
     Doughnut
   },
-  props: ['name', 'chartType'],
-  data() {
-    return {
-      data: {
-        labels: ['Поступило', 'Дебиторская задолженность', 'Остаток к продаже'],
-        datasets: [
-            {
-              data: [40, 20, 12],
-              backgroundColor: [
-                '#44D3F1',
-                '#34829D',
-                '#225266'
-              ],
-            }
-        ]
-      },
-      options: {
-        responsive: false,
-        align: 'start',
-        borderWidth: 1,
-        offset: 1
-      }
-    }
-  }
+  props: ['name', 'chartType', 'data', 'options'],
 }
 </script>
 
