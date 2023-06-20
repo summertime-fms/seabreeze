@@ -18,7 +18,7 @@ import {
   LinearScale
 } from 'chart.js'
 
-import { Bar, Doughnut } from 'vue-chartjs';
+import { Bar, Doughnut} from 'vue-chartjs';
 import {colors} from "@/colors";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend)
@@ -39,7 +39,7 @@ export default {
   .widget {
     padding: 25px;
     background-color: #273156;
-    border-radius: 20px;
+    border-radius: var(--radius);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
 
     h2 {

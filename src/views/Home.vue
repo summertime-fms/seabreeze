@@ -26,8 +26,15 @@
         :data="partnersData.data"
         :options="partnersData.options"
         chart-type="Bar"
-        style="grid-column: 2/5;margin-top: -190px;"
+        style="grid-column: 2/4;margin-top: -165px;"
     />
+
+<!--    <Widget-->
+<!--        name="Демонстрационный график"-->
+<!--        :data="demoData.data"-->
+<!--        :options="demoData.options"-->
+<!--        chart-type="Line"-->
+<!--    />-->
   </div>
 </template>
 
@@ -115,7 +122,6 @@ export default {
             {
               label: 'Внесено',
               data: [40, 50, 15, 89],
-              // backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
             },
             {
               label: 'Остаток к финансированию',
@@ -142,6 +148,63 @@ export default {
             }
           }
         },
+      },
+      demoData: {
+        type: 'line',
+        id: 'annotationLine',
+        data: {
+          labels: ['1', '2', '3'],
+          datasets: [
+        {
+          label: 'Cubic interpolation (monotone)',
+          data: [0, 20, 20, 60, 60, 120, NaN, 180, 120, 125, 105, 110, 170],
+          borderColor: 'red',
+          fill: false,
+          cubicInterpolationMode: 'monotone',
+          tension: 0.4
+        }, {
+          label: 'Cubic interpolation',
+          data: [0, 20, 20, 60, 60, 120, NaN, 180, 120, 125, 105, 110, 170],
+          borderColor: 'red',
+          fill: false,
+          tension: 0.4
+        }, {
+          label: 'Linear interpolation (default)',
+          data: [0, 20, 20, 60, 60, 120, NaN, 180, 120, 125, 105, 110, 170],
+          borderColor: 'red',
+          fill: false
+        }
+      ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Chart.js Line Chart - Cubic interpolation mode'
+            },
+          },
+          interaction: {
+            intersect: false,
+          },
+          scales: {
+            x: {
+              display: true,
+              title: {
+                display: true
+              }
+            },
+            y: {
+              display: true,
+              title: {
+                display: true,
+                text: 'Value'
+              },
+              suggestedMin: -10,
+              suggestedMax: 200
+            }
+          }
+        },
       }
     }
   }
@@ -154,5 +217,9 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     align-items: start;
     gap: 25px;
+    background-color: var(--darken-bg);
+    padding: 35px;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
   }
 </style>

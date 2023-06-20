@@ -1,0 +1,37 @@
+:root {
+    --base-text-color: #f2f2f2;
+    --radius: 15px;
+    --base-bg: #191F3C;
+    --lighten-bg: #273156;
+    --darken-bg: #040B23;
+
+    --trans: 0.255s ease-in-out;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    user-select: none;
+    object-position: center;
+    object-fit: cover;
+}
+
+body {
+    margin: 0;
+    color: var(--base-text-color);
+    background-color: var(--base-bg);
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+button {
+    background: none;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+button:focus {
+    background: inherit !important;
+}

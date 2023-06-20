@@ -1,5 +1,7 @@
 <template>
-     <router-view />
+  <component :is="layout">
+    <router-view />
+  </component>
 </template>
 
 <style lang="scss">
@@ -50,14 +52,16 @@
 
 <script>
 import BaseLayout from "@/layouts/BaseLayout.vue";
+import EmptyLayout from "@/layouts/EmptyLayout.vue";
 export default {
   computed: {
     layout() {
-      return this.$route.meta.layout;
+      return (this.$route.meta.layout || 'empty') + 'Layout'
     }
   },
   components: {
-    BaseLayout
+    BaseLayout,
+    EmptyLayout
   }
 }
 </script>
